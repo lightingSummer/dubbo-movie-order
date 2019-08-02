@@ -31,6 +31,9 @@
         <dubbo.version>2.0.0</dubbo.version>
         <zk-client.version>0.9</zk-client.version>
         <page-helper.version>1.2.10</page-helper.version>
+        <common-net.version>3.6</common-net.version>
+        <fastjson.version>1.2.58</fastjson.version>
+        <cinema-api.version>1.0.0</cinema-api.version>
     </properties>
 
 </project>

@@ -11,5 +11,17 @@
 
     <artifactId>order-dal</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>club.lightingsummer.movie</groupId>
+            <artifactId>order-api</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

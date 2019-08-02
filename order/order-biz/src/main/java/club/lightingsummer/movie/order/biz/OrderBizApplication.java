@@ -1,9 +1,11 @@
 package club.lightingsummer.movie.order.biz;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "club.lightingsummer.movie.order")
+@MapperScan("club.lightingsummer.movie.order.dal.dao")
 public class OrderBizApplication {
 
     public static void main(String[] args) {
