@@ -28,4 +28,6 @@ public interface OrderMapper {
     List<OrderVO> selectOrderByUserId(@Param("userId") int userId);
 
     OrderVO selectOrderByOrderId(@Param("orderId") String orderId);
+
+    String getSoldSeatsByFieldId(@Param("fieldId") int fieldId);
 }

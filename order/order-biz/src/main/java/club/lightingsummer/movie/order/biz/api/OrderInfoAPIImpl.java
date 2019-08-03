@@ -178,9 +178,24 @@ public class OrderInfoAPIImpl implements OrderInfoAPI {
         }
     }
 
+    /**
+     * @author: lightingSummer
+     * @date: 2019/8/3 0003
+     * @description: 查询场次已售信息
+     */
     @Override
     public String getSoldSeatsByFieldId(Integer fieldId) {
-        return null;
+        try {
+            if (fieldId == null) {
+                logger.error("查询已售座位错误，未传入任何场次编号");
+                return "";
+            } else {
+                return orderMapper.getSoldSeatsByFieldId(fieldId);
+            }
+        } catch (Exception e) {
+            logger.error("查询场次已售信息失败" + e.getMessage());
+            return "";
+        }
     }
 
     private static double getTotalPrice(int solds, double filmPrice) {

@@ -72,6 +72,9 @@
 	  AND o.cinema_id = c.UUID
       AND o.film_id = h.film_id
     </select>
+    <select id="getSoldSeatsByFieldId" resultType="java.lang.String">
+      SELECT GROUP_CONCAT(seats_ids) FROM tb_order where field_id=#{fieldId}
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from tb_order
     where UUID = #{uuid,jdbcType=VARCHAR}

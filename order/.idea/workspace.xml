@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51815860-2c4c-424b-b718-ce43b7afb645" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/order-api/src/main/java/club/lightingsummer/movie/order/api/vo/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-api/src/main/java/club/lightingsummer/movie/order/api/vo/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-biz/src/main/java/club/lightingsummer/movie/order/biz/OrderBizApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-biz/src/main/java/club/lightingsummer/movie/order/biz/OrderBizApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-biz/src/main/java/club/lightingsummer/movie/order/biz/api/OrderInfoAPIImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-biz/src/main/java/club/lightingsummer/movie/order/biz/api/OrderInfoAPIImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-biz/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-biz/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-biz/src/main/resources/mappers/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-biz/src/main/resources/mappers/OrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-biz/src/test/java/club/lightingsummer/movie/order/biz/OrderBizApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-biz/src/test/java/club/lightingsummer/movie/order/biz/OrderBizApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-dal/src/main/java/club/lightingsummer/movie/order/dal/dao/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-dal/src/main/java/club/lightingsummer/movie/order/dal/dao/OrderMapper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,15 +34,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/order-biz/src/main/java/club/lightingsummer/movie/order/biz/api/OrderInfoAPIImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="115" column="18" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
+            <state relative-caret-position="795">
+              <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5175#5176#0" expanded="true" />
-                <element signature="e#5202#5203#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/order-biz/src/test/java/club/lightingsummer/movie/order/biz/OrderBizApplicationTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/order-dal/src/main/java/club/lightingsummer/movie/order/dal/dao/OrderMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/order-biz/src/main/resources/mappers/OrderMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="208">
+              <caret line="75" column="50" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -92,13 +109,13 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/order-api/src/main/java/club/lightingsummer/movie/order/api/api/OrderInfoAPI.java" />
         <option value="$PROJECT_DIR$/order-api/src/main/java/club/lightingsummer/movie/order/api/po/Order.java" />
-        <option value="$PROJECT_DIR$/order-dal/src/main/java/club/lightingsummer/movie/order/dal/dao/OrderMapper.java" />
         <option value="$PROJECT_DIR$/order-api/src/main/java/club/lightingsummer/movie/order/api/vo/Page.java" />
-        <option value="$PROJECT_DIR$/order-biz/src/test/java/club/lightingsummer/movie/order/biz/OrderBizApplicationTests.java" />
         <option value="$PROJECT_DIR$/order-biz/src/main/java/club/lightingsummer/movie/order/biz/OrderBizApplication.java" />
         <option value="$PROJECT_DIR$/order-biz/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/order-dal/src/main/java/club/lightingsummer/movie/order/dal/dao/OrderMapper.java" />
         <option value="$PROJECT_DIR$/order-biz/src/main/resources/mappers/OrderMapper.xml" />
         <option value="$PROJECT_DIR$/order-biz/src/main/java/club/lightingsummer/movie/order/biz/api/OrderInfoAPIImpl.java" />
+        <option value="$PROJECT_DIR$/order-biz/src/test/java/club/lightingsummer/movie/order/biz/OrderBizApplicationTests.java" />
       </list>
     </option>
   </component>
@@ -354,7 +371,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564804328217" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564805311272" />
     <property name="last_opened_file_path" value="E:/猫眼/打造仿猫眼项目 以Dubbo为核心解锁微服务视频教程/coding-273/源码/订单模块/guns" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -463,7 +480,7 @@
       <updated>1564452883374</updated>
       <workItem from="1564452894499" duration="3792000" />
       <workItem from="1564735043936" duration="12245000" />
-      <workItem from="1564797262492" duration="7082000" />
+      <workItem from="1564797262492" duration="8116000" />
     </task>
     <servers />
   </component>
@@ -500,12 +517,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23119000" />
+    <option name="totallyTimeSpent" value="24153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20574887" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20574887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -514,7 +532,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46546054" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29769737" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39967105" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -728,33 +746,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/order-dal/src/main/java/club/lightingsummer/movie/order/dal/dao/OrderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/order-api/src/main/java/club/lightingsummer/movie/order/api/vo/OrderVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order-biz/src/test/java/club/lightingsummer/movie/order/biz/OrderBizApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding>
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,20 +775,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/order-biz/src/main/resources/mappers/OrderMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="208">
+          <caret line="75" column="50" selection-start-line="75" selection-start-column="50" selection-end-line="75" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order-dal/src/main/java/club/lightingsummer/movie/order/dal/dao/OrderMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/order-biz/src/main/java/club/lightingsummer/movie/order/biz/api/OrderInfoAPIImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="115" column="18" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
+        <state relative-caret-position="795">
+          <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5175#5176#0" expanded="true" />
-            <element signature="e#5202#5203#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/order-biz/src/test/java/club/lightingsummer/movie/order/biz/OrderBizApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
         </state>
       </provider>
     </entry>
