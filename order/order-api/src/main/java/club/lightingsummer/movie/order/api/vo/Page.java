@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Data
 public class Page<T> implements Serializable {
-    private Integer nowPage;
+    private Integer current;
     private Integer totalPage;
     private Integer size;
     private List<T> records;
@@ -20,8 +20,8 @@ public class Page<T> implements Serializable {
     private Page() {
     }
 
-    public Page(int nowPage) {
-        this.nowPage = nowPage;
-        this.totalPage = 0;
+    public Page(int nowPage,int size) {
+        this.current = nowPage;
+        this.size = size;
     }
 }

@@ -23,3 +23,11 @@ ftp:
   port: 2100
   user-name: ftp
   password: ftp
+logging:
+  level:
+    club:
+      lightingsummer:
+        movie:
+          order:
+            dal:
+              dao: debug

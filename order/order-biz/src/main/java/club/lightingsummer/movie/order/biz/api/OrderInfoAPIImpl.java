@@ -13,10 +13,13 @@ import club.lightingsummer.movie.order.dal.dao.OrderMapper;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -110,6 +113,7 @@ public class OrderInfoAPIImpl implements OrderInfoAPI {
      * @description: 生成订单信息
      */
     @Override
+    @Transactional
     public OrderVO saveOrderInfo(Integer fieldId, String soldSeats, String seatsName, Integer userId) {
         try {
             // 调用影院模块接口 查询场次电影信息
@@ -122,39 +126,56 @@ public class OrderInfoAPIImpl implements OrderInfoAPI {
             double filmPrice = orderQueryVO.getPrice();
             int solds = soldSeats.split(",").length;
             double totalPrice = getTotalPrice(solds, filmPrice);
-
+            // 填充order信息
             Order order = new Order();
             order.setUuid(UUIDUtil.getUUID());
             order.setCinemaId(orderQueryVO.getCinemaId());
             order.setFieldId(orderQueryVO.getFieldId());
             order.setFilmId(orderQueryVO.getFilmId());
-            order.setFilmPrice(totalPrice);
+            order.setFilmPrice(filmPrice);
+            order.setOrderPrice(totalPrice);
             order.setSeatsIds(soldSeats);
             order.setSeatsName(seatsName);
             order.setOrderUser(userId);
-
+            // 封装VO返回
             int insert = orderMapper.insertSelective(order);
-
             if (insert > 0) {
                 OrderVO orderVO = orderMapper.selectOrderByOrderId(order.getUuid());
                 if (orderVO != null) {
                     return orderVO;
                 } else {
-                    logger.error("订单查询出错+{}", order.getUuid());
+                    throw new Exception();
                 }
             } else {
                 logger.error("订单插入失败");
+                throw new Exception();
             }
         } catch (Exception e) {
-            logger.error("生成订单信息失败 " + "场次信息:" + fieldId + "座位:" + soldSeats + "userId:" + userId);
+            logger.error("生成订单信息失败 " + "场次信息:" + fieldId + "座位:" + soldSeats + "userId:" + userId + e.getMessage());
+            // 事务手动回滚
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
         }
         return null;
     }
 
+    /**
+     * @author: lightingSummer
+     * @date: 2019/8/3 0003
+     * @description: 根据用户id查询用户订单信息
+     */
     @Override
     public Page<OrderVO> getOrderByUserId(Integer userId, Page<OrderVO> page) {
-
-        return null;
+        try {
+            PageHelper.startPage(page.getCurrent(), page.getSize(), "order_time");
+            List<OrderVO> list = orderMapper.selectOrderByUserId(userId);
+            // 计算页数
+            page.setTotalPage((int) Math.ceil(list.size() / (1.0 * page.getSize())));
+            page.setRecords(list);
+            return page;
+        } catch (Exception e) {
+            logger.error("查询用户订单信息出错" + e.getMessage());
+            return null;
+        }
     }
 
     @Override
