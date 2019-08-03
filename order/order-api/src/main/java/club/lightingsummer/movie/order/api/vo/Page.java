@@ -14,7 +14,8 @@ import java.util.List;
 public class Page<T> implements Serializable {
     private Integer nowPage;
     private Integer totalPage;
-    private List<T> data;
+    private Integer size;
+    private List<T> records;
 
     private Page() {
     }

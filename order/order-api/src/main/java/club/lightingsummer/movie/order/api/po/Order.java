@@ -1,7 +1,10 @@
 package club.lightingsummer.movie.order.api.po;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class Order {
     private String uuid;
 
@@ -22,94 +25,6 @@ public class Order {
     private Date orderTime;
 
     private Integer orderUser;
-
+    //0-待支付,1-已支付,2-已关闭
     private Integer orderStatus;
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid == null ? null : uuid.trim();
-    }
-
-    public Integer getCinemaId() {
-        return cinemaId;
-    }
-
-    public void setCinemaId(Integer cinemaId) {
-        this.cinemaId = cinemaId;
-    }
-
-    public Integer getFieldId() {
-        return fieldId;
-    }
-
-    public void setFieldId(Integer fieldId) {
-        this.fieldId = fieldId;
-    }
-
-    public Integer getFilmId() {
-        return filmId;
-    }
-
-    public void setFilmId(Integer filmId) {
-        this.filmId = filmId;
-    }
-
-    public String getSeatsIds() {
-        return seatsIds;
-    }
-
-    public void setSeatsIds(String seatsIds) {
-        this.seatsIds = seatsIds == null ? null : seatsIds.trim();
-    }
-
-    public String getSeatsName() {
-        return seatsName;
-    }
-
-    public void setSeatsName(String seatsName) {
-        this.seatsName = seatsName == null ? null : seatsName.trim();
-    }
-
-    public Double getFilmPrice() {
-        return filmPrice;
-    }
-
-    public void setFilmPrice(Double filmPrice) {
-        this.filmPrice = filmPrice;
-    }
-
-    public Double getOrderPrice() {
-        return orderPrice;
-    }
-
-    public void setOrderPrice(Double orderPrice) {
-        this.orderPrice = orderPrice;
-    }
-
-    public Date getOrderTime() {
-        return orderTime;
-    }
-
-    public void setOrderTime(Date orderTime) {
-        this.orderTime = orderTime;
-    }
-
-    public Integer getOrderUser() {
-        return orderUser;
-    }
-
-    public void setOrderUser(Integer orderUser) {
-        this.orderUser = orderUser;
-    }
-
-    public Integer getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(Integer orderStatus) {
-        this.orderStatus = orderStatus;
-    }
 }

@@ -1,6 +1,7 @@
 package club.lightingsummer.movie.order.biz.api;
 
 import club.lightingsummer.movie.cinema.api.api.CinemaInfoAPI;
+import club.lightingsummer.movie.cinema.api.vo.OrderQueryVO;
 import club.lightingsummer.movie.order.api.api.OrderInfoAPI;
 import club.lightingsummer.movie.order.api.po.Order;
 import club.lightingsummer.movie.order.api.vo.OrderVO;
@@ -17,6 +18,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -108,22 +111,63 @@ public class OrderInfoAPIImpl implements OrderInfoAPI {
      */
     @Override
     public OrderVO saveOrderInfo(Integer fieldId, String soldSeats, String seatsName, Integer userId) {
-        Order order = new Order();
-        order.setUuid(UUIDUtil.getUUID());
+        try {
+            // 调用影院模块接口 查询场次电影信息
+            OrderQueryVO orderQueryVO = cinemaInfoAPI.getOrderNeedFilmInfoByField(fieldId);
+            if (orderQueryVO == null) {
+                logger.error("调用cinema模块异常");
+                return null;
+            }
+            // 求订单总金额
+            double filmPrice = orderQueryVO.getPrice();
+            int solds = soldSeats.split(",").length;
+            double totalPrice = getTotalPrice(solds, filmPrice);
 
+            Order order = new Order();
+            order.setUuid(UUIDUtil.getUUID());
+            order.setCinemaId(orderQueryVO.getCinemaId());
+            order.setFieldId(orderQueryVO.getFieldId());
+            order.setFilmId(orderQueryVO.getFilmId());
+            order.setFilmPrice(totalPrice);
+            order.setSeatsIds(soldSeats);
+            order.setSeatsName(seatsName);
+            order.setOrderUser(userId);
 
+            int insert = orderMapper.insertSelective(order);
 
-        OrderVO orderVO = new OrderVO();
+            if (insert > 0) {
+                OrderVO orderVO = orderMapper.selectOrderByOrderId(order.getUuid());
+                if (orderVO != null) {
+                    return orderVO;
+                } else {
+                    logger.error("订单查询出错+{}", order.getUuid());
+                }
+            } else {
+                logger.error("订单插入失败");
+            }
+        } catch (Exception e) {
+            logger.error("生成订单信息失败 " + "场次信息:" + fieldId + "座位:" + soldSeats + "userId:" + userId);
+        }
         return null;
     }
 
     @Override
     public Page<OrderVO> getOrderByUserId(Integer userId, Page<OrderVO> page) {
+
         return null;
     }
 
     @Override
     public String getSoldSeatsByFieldId(Integer fieldId) {
         return null;
+    }
+
+    private static double getTotalPrice(int solds, double filmPrice) {
+        BigDecimal soldsDeci = new BigDecimal(solds);
+        BigDecimal filmPriceDeci = new BigDecimal(filmPrice);
+        BigDecimal result = soldsDeci.multiply(filmPriceDeci);
+        // 四舍五入，取小数点后两位
+        BigDecimal bigDecimal = result.setScale(2, RoundingMode.HALF_UP);
+        return bigDecimal.doubleValue();
     }
 }

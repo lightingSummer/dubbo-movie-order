@@ -1,6 +1,7 @@
 package club.lightingsummer.movie.order.dal.dao;
 
 import club.lightingsummer.movie.order.api.po.Order;
+import club.lightingsummer.movie.order.api.vo.OrderVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -23,4 +24,8 @@ public interface OrderMapper {
     int updateByPrimaryKey(Order record);
 
     List<Order> selectOrderByFieldId(@Param("fieldId") int fieldId);
+
+    List<OrderVO> selectOrderByUserId(@Param("userId") int userId);
+
+    OrderVO selectOrderByOrderId(@Param("orderId") String orderId);
 }
