@@ -3,7 +3,7 @@ film-order模块
 订单模块<br>
 
 ## 用到的技术及实现主要功能<br>
-* 使用dubbo提供cinema信息各种查询服务，使用zookeeper做注册中心，用于服务注册及调用<br>
+* 使用dubbo提供order信息各种查询服务，使用zookeeper做注册中心，用于服务注册及调用<br>
 * 使用springboot作为后端主要框架，aop配置日志<br>
 * 使用mysql5.7作为数据库存储，mybatis做查询，mybatis-generator生成xml映射，pagehelper做分页<br>
 * 搭建FTP服务器，存储座位对应的json文件
